@@ -4,8 +4,9 @@ from openai import OpenAI
 
 # Инициализация клиента
 # client = OpenAI()
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-# model = "gpt-5-nano"
+api_key = os.environ.get("OPENAI_API_KEY") or st.secrets["OPENAI_API_KEY"]
+client = OpenAI(api_key=api_key)
+
 st.set_page_config(page_title="LLM Агент", page_icon="🤖")
 st.title("🤖 LLM Агент со стримингом")
 
