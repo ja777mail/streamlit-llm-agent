@@ -3,7 +3,8 @@ import streamlit as st
 from openai import OpenAI
 
 # Инициализация клиента
-client = OpenAI()
+# client = OpenAI()
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # model = "gpt-5-nano"
 st.set_page_config(page_title="LLM Агент", page_icon="🤖")
 st.title("🤖 LLM Агент со стримингом")
